@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_all.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugz <hugz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:20:30 by hugz              #+#    #+#             */
-/*   Updated: 2025/06/07 17:04:10 by hugz             ###   ########.fr       */
+/*   Updated: 2025/06/09 11:27:05 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,15 @@ int	find_lower_value(t_stack *stack)
 int	get_total_cost(t_stack *stack_a, t_stack **stack_b)
 {
 	int		cost_a;
-	int		cost_b = 0;
+	int		cost_b;
 	t_stack	*target_b;
 
 	cost_a = stack_a->cost;
 	target_b = *stack_b;
-
+	cost_b = 0;
 	while (target_b && target_b->value != stack_a->target)
 		target_b = target_b->next;
-
-	if (!target_b)
-	{
-		//printf("⚠️  WARNING: Aucun target trouvé pour la value %d (target = %d)\n",
-		//	stack_a->value, stack_a->target);
-	}
-	else
-	{
+	if (target_b)
 		cost_b = target_b->cost;
-	}
-
-	return combine_costs(cost_a, cost_b);
+	return (combine_costs(cost_a, cost_b));
 }

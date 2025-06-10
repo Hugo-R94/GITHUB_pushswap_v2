@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:03:19 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/06 11:42:10 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/09 14:21:51 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 //Ne fait rien s’il n’y en a qu’un ou aucun.
 void	swap(t_stack *stack)
 {
-	int tmp;
+	int	tmp;
 
 	if (!stack)
 		return ;
@@ -23,7 +23,7 @@ void	swap(t_stack *stack)
 	stack->value = stack->next->value;
 	stack->next->value = tmp;
 	tmp = stack->index;
-	stack->index=stack->next->index;
+	stack->index = stack->next->index;
 	stack->next->index = tmp;
 }
 

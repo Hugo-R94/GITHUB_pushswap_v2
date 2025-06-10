@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sort_base.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugz <hugz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 15:52:52 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/07 00:34:52 by hugz             ###   ########.fr       */
+/*   Updated: 2025/06/09 13:25:21 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 void	ft_error(void)
 {
-	ft_putstr("Error\n");
+	ft_putstr_fd("error\n", 2);
 	exit(EXIT_FAILURE);
 }
 
@@ -30,10 +29,13 @@ void	ft_sort_2(t_stack **stack)
 
 void	ft_sort_3(t_stack **stack)
 {
-	int	a = (*stack)->value;
-	int	b = (*stack)->next->value;
-	int	c = (*stack)->next->next->value;
+	int	a;
+	int	b;
+	int	c;
 
+	a = (*stack)->value;
+	b = (*stack)->next->value;
+	c = (*stack)->next->next->value;
 	if (a < b && b < c)
 		return ;
 	else if (a < c && c < b)
@@ -52,18 +54,18 @@ void	ft_sort_3(t_stack **stack)
 		sa(stack);
 		rra(stack);
 	}
-	//exit(EXIT_SUCCESS);
 }
 
-void sort_to_5(t_stack **stack_a, t_stack **stack_b)
+void	sort_to_5(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
+	int	min;
+
 	while (ft_lstsize(*stack_a) > 3)
 	{
 		min = find_lower_value(*stack_a);
 		while ((*stack_a)->value != min)
 		{
-			if (get_index(*stack_a,min) <= ft_lstsize(*stack_a) / 2)
+			if (get_index(*stack_a, min) <= ft_lstsize(*stack_a) / 2)
 			{
 				ra(stack_a);
 			}
@@ -75,7 +77,6 @@ void sort_to_5(t_stack **stack_a, t_stack **stack_b)
 	ft_sort_3(stack_a);
 	while (*stack_b)
 		pa(stack_a, stack_b);
-	//print_stack(*stack_a, *stack_b);
 }
 
 void	sort_base(t_stack **stack_a, t_stack **stack_b)
@@ -89,5 +90,5 @@ void	sort_base(t_stack **stack_a, t_stack **stack_b)
 	if (ft_lstsize(*stack_a) == 3)
 		ft_sort_3(stack_a);
 	if (ft_lstsize(*stack_a) == 4 || ft_lstsize(*stack_a) == 5)
-		sort_to_5(stack_a,stack_b);
+		sort_to_5(stack_a, stack_b);
 }

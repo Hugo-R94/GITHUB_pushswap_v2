@@ -6,11 +6,12 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:34:21 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/06 11:20:14 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/10 16:42:59 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 static int	ft_iswhite(char c)
 {
@@ -42,5 +43,10 @@ int	ft_atoi(const char *nptr)
 		return (0);
 	while (nptr[index] >= '0' && nptr[index] <= '9')
 		result = result * 10 + (nptr[index++] - '0');
+	if ((result > INT_MAX && signe == 1) || (result > INT_MAX && signe == -1))
+	{
+		ft_putstr_fd("error\n", 2);
+		exit(EXIT_FAILURE);
+	}
 	return (signe * result);
 }
