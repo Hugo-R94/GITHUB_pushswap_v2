@@ -2,13 +2,19 @@ NAME = push_swap
 BONUS = checker
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRCSDIR = srcs
 BONUSDIR = bonus
 OBJDIR = objs
 BONUSOBJDIR = bonus_objs
 INCLUDES = headers
+
+# Couleurs
+GREEN = \033[0;32m
+BLUE = \033[1;34m
+YELLOW = \033[1;33m
+	RESET = \033[0m
 
 SRC = \
 	$(SRCSDIR)/ft_atoi.c \
@@ -27,7 +33,6 @@ SRC = \
 	$(SRCSDIR)/sort_long_2.c \
 	$(SRCSDIR)/utils_lst.c \
 	$(SRCSDIR)/utils.c \
-	
 
 BONUS_SRC = \
 	$(BONUSDIR)/checker.c \
@@ -47,31 +52,36 @@ BONUS_SRC = \
 OBJ = $(SRC:$(SRCSDIR)/%.c=$(OBJDIR)/%.o)
 BONUS_OBJ = $(BONUS_SRC:$(BONUSDIR)/%.c=$(BONUSOBJDIR)/%.o)
 
-all: $(NAME)
+all: $(NAME) bonus
+	@echo "$(GREEN)All targets built successfully.$(RESET)"
 
 $(NAME): $(OBJ)
+	@echo "$(BLUE)[Compiling]$(RESET) $(NAME)"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $(NAME) $(OBJ)
 
-bonus: $(BONUS)
-
-$(BONUS): $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
+	@echo "$(BLUE)[Compiling]$(RESET) $(BONUS)"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $(BONUS) $(BONUS_OBJ)
 
 $(OBJDIR)/%.o: $(SRCSDIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+	@echo "$(YELLOW)[OK]$(RESET) Compiled $<"
 
 $(BONUSOBJDIR)/%.o: $(BONUSDIR)/%.c
 	@mkdir -p $(BONUSOBJDIR)
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+	@echo "$(YELLOW)[OK]$(RESET) Compiled $<"
 
 clean:
 	@rm -rf $(OBJDIR)
 	@rm -rf $(BONUSOBJDIR)
+	@echo "$(GREEN)Cleaned object files.$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(BONUS)
+	@echo "$(GREEN)Removed binaries.$(RESET)"
 
 re: fclean all
 

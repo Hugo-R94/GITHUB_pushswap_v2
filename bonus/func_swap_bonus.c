@@ -6,11 +6,11 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:03:19 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/10 15:01:39 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 11:20:33 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/checker.h"
+#include "checker.h"
 //swap : Intervertit les 2 premiers éléments au sommet de la pile.
 //Ne fait rien s’il n’y en a qu’un ou aucun.
 void	swap(t_stack *stack)

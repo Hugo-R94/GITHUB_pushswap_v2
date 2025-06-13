@@ -6,11 +6,11 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:37:07 by hugz              #+#    #+#             */
-/*   Updated: 2025/06/10 16:24:34 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 12:20:12 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/checker.h"
+#include "checker.h"
 
 int	check_stack_a(t_stack **stack, int nb)
 {
@@ -39,7 +39,7 @@ t_stack	*parse_arg(t_stack **stack_a, char *argv)
 	{
 		if (!is_num(split[i]) || !add_fill_stack(stack_a, ft_atoi(split[i])))
 		{
-			ft_putstr_fd("error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(split);
 			ft_lstclear(stack_a);
 			return (NULL);

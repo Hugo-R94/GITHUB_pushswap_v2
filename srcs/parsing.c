@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:37:07 by hugz              #+#    #+#             */
-/*   Updated: 2025/06/10 16:57:02 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 12:20:26 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_stack	*parse_arg(t_stack **stack_a, char *argv)
 	{
 		if (!is_num(split[i]) || !add_fill_stack(stack_a, ft_atoi(split[i])))
 		{
-			ft_putstr_fd("error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(split);
 			ft_lstclear(stack_a);
 			return (NULL);

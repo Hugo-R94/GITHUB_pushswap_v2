@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 15:52:52 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/09 13:25:21 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 12:18:52 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(void)
 {
-	ft_putstr_fd("error\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 

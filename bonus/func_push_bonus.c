@@ -6,11 +6,11 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:00:12 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/10 16:19:43 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 11:20:19 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/checker.h"
+#include "checker.h"
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {

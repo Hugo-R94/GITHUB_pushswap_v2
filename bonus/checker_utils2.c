@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:31:12 by hugz              #+#    #+#             */
-/*   Updated: 2025/06/10 14:33:52 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 12:46:46 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_lstclear(t_stack **lst)
 {
 	t_stack	*tmp;
 
-	if (!*lst)
+	if (!lst || !*lst)
 		return ;
 	while (*lst)
 	{

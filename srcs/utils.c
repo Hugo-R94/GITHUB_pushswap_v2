@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:12:53 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/10 16:53:09 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 11:19:34 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,37 +40,6 @@ int	find_best_target(t_stack *stack_b, int value)
 		return (-1);
 }
 
-// void	final_merge(t_stack **a, t_stack **b)
-// {
-// 	int	rotations;
-// 	int	last;
-// 	int	top;
-
-// 	rotations = 0;
-// 	if (*b && (*b)->value > get_last(*a)->value)
-// 		pa(a, b);
-// 	while (*b && rotations < 3)
-// 	{
-// 		top = (*a)->value;
-// 		last = get_last(*a)->value;
-// 		while (*b && (*b)->value > last && (*b)->value < top)
-// 			pa(a, b);
-// 		if (*b)
-// 		{
-// 			rra(a);
-// 			rotations++;
-// 		}
-// 	}
-// 	while (*b)
-// 		pa(a, b);
-// 	last = get_last(*a)->value;
-// 	while ((*a)->value > last)
-// 	{
-// 		rra(a);
-// 		last = get_last(*a)->value;
-// 	}
-// }
-// Partie principale
 void	final_merge(t_stack **a, t_stack **b)
 {
 	int	rotations;
@@ -93,7 +62,6 @@ void	final_merge(t_stack **a, t_stack **b)
 	}
 }
 
-// Partie extraite
 void	handle_merge_rotation(t_stack **a, t_stack **b, int *rotations)
 {
 	int	top;

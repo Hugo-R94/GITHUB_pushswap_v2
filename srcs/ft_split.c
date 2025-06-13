@@ -6,13 +6,13 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:20 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/09 12:48:18 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/11 11:22:02 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	ft_free(char **str, int index)
+static	void	ft_free_split(char **str, int index)
 {
 	while (--index >= 0)
 		free(str[index]);
@@ -73,7 +73,7 @@ static int	ft_splitcpy(char *str, int index, char sep, char **str_arr)
 			str_arr[index] = allocate_word(str, sep);
 			if (!str_arr[index])
 			{
-				ft_free(str_arr, index);
+				ft_free_split(str_arr, index);
 				return (0);
 			}
 			while (*str && *str != sep)

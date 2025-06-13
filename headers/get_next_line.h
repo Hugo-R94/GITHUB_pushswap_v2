@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 13:06:52 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/10 17:02:33 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 15:38:20 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #  define BUFFER_SIZE 10
 # endif
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int OP);
 char	*ft_read(int fd, char *static_str);
 char	*ft_line(char *statict_str);
 

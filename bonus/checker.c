@@ -6,11 +6,11 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:13:19 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/10 16:57:52 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 15:38:05 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/checker.h"
+#include "checker.h"
 #include <stdio.h>
 
 int	is_sorted(t_stack *stack)
@@ -74,16 +74,19 @@ void	read_input(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*buf;
 
-	buf = get_next_line(0);
+	buf = get_next_line(0, 0);
 	while (buf)
 	{
-		if (!check_move(buf, stack_a, stack_b))
+		if (!(check_move(buf, stack_a, stack_b) == 1))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("TEST\n", 2);
+			ft_lstclear(stack_a);
+			ft_lstclear(stack_b);
+			free(buf);
 			exit(EXIT_FAILURE);
 		}
 		free (buf);
-		buf = get_next_line(0);
+		buf = get_next_line(0, 0);
 	}
 }
 
@@ -105,5 +108,6 @@ int	main(int argc, char **argv)
 		write(1, "KO\n", 3);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
+	get_next_line(0, 1);
 	return (0);
 }
